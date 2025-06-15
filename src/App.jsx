@@ -12,13 +12,13 @@ import Home from './pages/Home'
 function App() {
   const { MODE } = import.meta.env
   Pi.init({ version: '2.0', sandbox: MODE === 'development' })
-  const origin = usePiBrowser()
+  usePiBrowser()
 
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home origin={origin} />} />
+          <Route path="/" element={<Home />} />
         </Route>
       </Routes>
     </BrowserRouter>
